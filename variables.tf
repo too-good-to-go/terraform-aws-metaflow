@@ -210,3 +210,15 @@ variable "custom_s3_buckets" {
   type        = list(string)
   description = "S3 buckets that should have shared access from AWS Batch"
 }
+
+variable "enable_iam_authentication" {
+  type        = bool
+  description = "Enable IAM database authentication"
+  default     = true
+}
+
+variable "enable_deletion_protection" {
+  type        = bool
+  description = "Enable deletion protection for RDS database"
+  default     = true
+}

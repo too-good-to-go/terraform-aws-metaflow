@@ -71,3 +71,15 @@ variable "enable_key_rotation" {
   description = "Enable key rotation for KMS keys"
   default     = false
 }
+
+variable "enable_iam_authentication" {
+  type        = bool
+  description = "Enable IAM database authentication"
+  default     = true
+}
+
+variable "enable_deletion_protection" {
+  type        = bool
+  description = "Enable deletion protection for RDS database"
+  default     = true
+}
