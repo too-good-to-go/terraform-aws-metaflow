@@ -14,6 +14,7 @@ module "metaflow-datastore" {
 
   db_instance_type  = var.db_instance_type
   db_engine_version = var.db_engine_version
+  iam_database_authentication_enabled = var.iam_database_authentication_enabled
 
   standard_tags = var.tags
 }

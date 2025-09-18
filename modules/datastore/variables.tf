@@ -71,3 +71,9 @@ variable "enable_key_rotation" {
   description = "Enable key rotation for KMS keys"
   default     = false
 }
+
+variable "iam_database_authentication_enabled" {
+  type        = bool
+  description = "Enable IAM database authentication"
+  default     = false
+}

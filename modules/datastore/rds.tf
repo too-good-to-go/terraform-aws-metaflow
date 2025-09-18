@@ -67,6 +67,7 @@ resource "aws_rds_cluster" "this" {
   master_username      = var.db_username
   master_password      = random_password.this.result
   db_subnet_group_name = aws_db_subnet_group.this.id
+  iam_database_authentication_enabled = var.iam_database_authentication_enabled
 
   engine_version    = var.db_engine_version
   storage_encrypted = true
