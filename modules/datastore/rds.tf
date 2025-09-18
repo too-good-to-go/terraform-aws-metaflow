@@ -116,6 +116,7 @@ resource "aws_db_instance" "this" {
   multi_az                            = true                                                                                                           # Multiple availability zone?
   final_snapshot_identifier           = "${var.resource_prefix}${var.db_name}-final-snapshot${var.resource_suffix}-${random_pet.final_snapshot_id.id}" # Snapshot upon delete
   vpc_security_group_ids              = [aws_security_group.rds_security_group.id]
+  deletion_protection                 = var.enable_deletion_protection
 
   tags = merge(
     var.standard_tags,

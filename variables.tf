@@ -214,5 +214,11 @@ variable "custom_s3_buckets" {
 variable "enable_iam_authentication" {
   type        = bool
   description = "Enable IAM database authentication"
-  default     = false
+  default     = true
+}
+
+variable "enable_deletion_protection" {
+  type        = bool
+  description = "Enable deletion protection for RDS database"
+  default     = true
 }
