@@ -72,7 +72,7 @@ variable "enable_key_rotation" {
   default     = false
 }
 
-variable "iam_database_authentication_enabled" {
+variable "enable_iam_authentication" {
   type        = bool
   description = "Enable IAM database authentication"
   default     = false

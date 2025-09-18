@@ -211,7 +211,7 @@ variable "custom_s3_buckets" {
   description = "S3 buckets that should have shared access from AWS Batch"
 }
 
-variable "iam_database_authentication_enabled" {
+variable "enable_iam_authentication" {
   type        = bool
   description = "Enable IAM database authentication"
   default     = false
