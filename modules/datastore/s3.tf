@@ -10,9 +10,18 @@ resource "aws_s3_bucket" "this" {
   )
 }
 
-resource "aws_s3_bucket_acl" "this" {
+resource "aws_s3_bucket_ownership_controls" "this" {
   bucket = aws_s3_bucket.this.id
-  acl    = "private"
+
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
+resource "aws_s3_bucket_acl" "this" {
+  bucket     = aws_s3_bucket.this.id
+  acl        = "private"
+  depends_on = [aws_s3_bucket_ownership_controls.this]
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
