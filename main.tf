@@ -38,6 +38,7 @@ module "metaflow-metadata-service" {
   fargate_execution_role_arn       = module.metaflow-computation.ecs_execution_role_arn
   iam_partition                    = var.iam_partition
   metadata_service_container_image = local.metadata_service_container_image
+  metadata_service_db_timeout      = var.metadata_service_db_timeout
   metaflow_vpc_id                  = var.vpc_id
   rds_master_instance_endpoint     = module.metaflow-datastore.rds_master_instance_endpoint
   s3_bucket_arn                    = module.metaflow-datastore.s3_bucket_arn
