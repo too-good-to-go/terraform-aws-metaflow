@@ -90,6 +90,12 @@ variable "metadata_service_memory" {
   description = "ECS task memory in MiB for metadata service"
 }
 
+variable "metadata_service_db_timeout" {
+  type        = number
+  default     = 60
+  description = "Database timeout in seconds for metadata service DB operations (MF_METADATA_DB_TIMEOUT)"
+}
+
 variable "metaflow_vpc_id" {
   type        = string
   description = "ID of the Metaflow VPC this SageMaker notebook instance is to be deployed in"

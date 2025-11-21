@@ -120,6 +120,12 @@ variable "metadata_service_enable_api_gateway" {
   description = "Enable API Gateway for public metadata service endpoint"
 }
 
+variable "metadata_service_db_timeout" {
+  type        = number
+  default     = 60
+  description = "Database timeout in seconds for metadata service DB operations (MF_METADATA_DB_TIMEOUT)"
+}
+
 variable "ui_static_container_image" {
   type        = string
   default     = ""
