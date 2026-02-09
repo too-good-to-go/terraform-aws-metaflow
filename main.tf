@@ -71,6 +71,7 @@ module "metaflow-ui" {
   ui_static_container_image       = local.ui_static_container_image
   alb_internal                    = var.ui_alb_internal
   alb_drop_invalid_header_fields  = var.ui_alb_drop_invalid_header_fields
+  alb_ssl_policy                  = var.ui_alb_ssl_policy
   ui_allow_list                   = var.ui_allow_list
   ui_allow_security_groups        = var.ui_allow_security_groups
 
@@ -117,6 +118,7 @@ module "metaflow-step-functions" {
   iam_partition       = var.iam_partition
   s3_bucket_arn       = module.metaflow-datastore.s3_bucket_arn
   s3_bucket_kms_arn   = module.metaflow-datastore.datastore_s3_bucket_kms_key_arn
+  dynamodb_point_in_time_recovery_enabled = var.step_functions_dynamodb_point_in_time_recovery_enabled
 
   standard_tags = var.tags
 }

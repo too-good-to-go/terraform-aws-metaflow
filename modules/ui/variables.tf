@@ -138,3 +138,9 @@ variable "alb_drop_invalid_header_fields" {
   description = "Indicates whether invalid header fields are dropped by the Application Load Balancer"
   default     = false
 }
+
+variable "alb_ssl_policy" {
+  type        = string
+  default     = null
+  description = "Name of the SSL policy for the HTTPS listener. If null, the load balancer default is used."
+}
