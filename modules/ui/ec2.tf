@@ -133,6 +133,7 @@ resource "aws_lb_listener" "this" {
   load_balancer_arn = aws_lb.this.arn
   port              = "443"
   protocol          = "HTTPS"
+  ssl_policy        = "ELBSecurityPolicy-TLS13-1-2-2021-06"
 
   certificate_arn = var.certificate_arn
 
