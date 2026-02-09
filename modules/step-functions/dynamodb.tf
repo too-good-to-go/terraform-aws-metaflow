@@ -9,7 +9,7 @@ resource "aws_dynamodb_table" "step_functions_state_table" {
   }
 
   point_in_time_recovery {
-    enabled = false
+    enabled = var.dynamodb_point_in_time_recovery_enabled
   }
 
   attribute {

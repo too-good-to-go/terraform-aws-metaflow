@@ -228,3 +228,9 @@ variable "enable_deletion_protection" {
   description = "Enable deletion protection for RDS database"
   default     = true
 }
+
+variable "step_functions_dynamodb_point_in_time_recovery_enabled" {
+  type        = bool
+  description = "Enable Point-in-Time Recovery for the Step Functions state DynamoDB table"
+  default     = false
+}

@@ -39,3 +39,9 @@ variable "standard_tags" {
   type        = map(string)
   description = "The standard tags to apply to every AWS resource."
 }
+
+variable "dynamodb_point_in_time_recovery_enabled" {
+  type        = bool
+  description = "Enable Point-in-Time Recovery for the Step Functions state DynamoDB table"
+  default     = false
+}
