@@ -137,6 +137,12 @@ variable "ui_alb_internal" {
   default     = false
 }
 
+variable "ui_alb_ssl_policy" {
+  type        = string
+  default     = null
+  description = "Name of the SSL policy for the UI HTTPS listener (e.g. ELBSecurityPolicy-TLS13-1-2-2021-06). If null, the load balancer default is used."
+}
+
 # variables from infra project that defines the VPC we will deploy to
 
 variable "subnet1_id" {

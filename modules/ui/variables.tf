@@ -132,3 +132,9 @@ variable "alb_internal" {
   description = "Defines whether the ALB is internal"
   default     = false
 }
+
+variable "alb_ssl_policy" {
+  type        = string
+  default     = null
+  description = "Name of the SSL policy for the HTTPS listener. If null, the load balancer default is used."
+}
