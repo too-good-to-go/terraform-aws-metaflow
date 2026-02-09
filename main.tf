@@ -116,6 +116,7 @@ module "metaflow-step-functions" {
   iam_partition       = var.iam_partition
   s3_bucket_arn       = module.metaflow-datastore.s3_bucket_arn
   s3_bucket_kms_arn   = module.metaflow-datastore.datastore_s3_bucket_kms_key_arn
+  dynamodb_point_in_time_recovery_enabled = var.step_functions_dynamodb_point_in_time_recovery_enabled
 
   standard_tags = var.tags
 }
