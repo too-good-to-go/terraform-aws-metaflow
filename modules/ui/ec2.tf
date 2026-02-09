@@ -97,6 +97,7 @@ resource "aws_lb" "this" {
   security_groups = [
     aws_security_group.ui_lb_security_group.id
   ]
+  drop_invalid_header_fields = true
 
   tags = var.standard_tags
 }
