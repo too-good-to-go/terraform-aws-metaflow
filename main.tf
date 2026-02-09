@@ -70,6 +70,7 @@ module "metaflow-ui" {
   ui_backend_container_image      = local.metadata_service_container_image
   ui_static_container_image       = local.ui_static_container_image
   alb_internal                    = var.ui_alb_internal
+  alb_drop_invalid_header_fields  = var.ui_alb_drop_invalid_header_fields
   ui_allow_list                   = var.ui_allow_list
   ui_allow_security_groups        = var.ui_allow_security_groups
 

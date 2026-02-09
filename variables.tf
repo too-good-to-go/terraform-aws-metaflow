@@ -137,6 +137,12 @@ variable "ui_alb_internal" {
   default     = false
 }
 
+variable "ui_alb_drop_invalid_header_fields" {
+  type        = bool
+  description = "Indicates whether invalid header fields are dropped by the UI Application Load Balancer"
+  default     = true
+}
+
 # variables from infra project that defines the VPC we will deploy to
 
 variable "subnet1_id" {

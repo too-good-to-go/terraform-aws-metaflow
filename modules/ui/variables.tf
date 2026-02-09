@@ -132,3 +132,9 @@ variable "alb_internal" {
   description = "Defines whether the ALB is internal"
   default     = false
 }
+
+variable "alb_drop_invalid_header_fields" {
+  type        = bool
+  description = "Indicates whether invalid header fields are dropped by the Application Load Balancer"
+  default     = true
+}
