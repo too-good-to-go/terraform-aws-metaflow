@@ -1,12 +1,11 @@
 resource "aws_batch_compute_environment" "this" {
   /* Unique name for compute environment.
-     We use compute_environment_name_prefix opposed to just compute_environment_name as batch compute environments must
-     be created and destroyed, never edited. This way when we go to make a "modification" we will stand up a new
-     batch compute environment with a new unique name and once that succeeds, the old one will be torn down. If we had
-     just used compute_environment_name, then there would be a conflict when we went to stand up the new
-     compute_environment that had the modifications applied and the process would fail.
+     We use compute_environment_name opposed to compute_environment_name_prefix (deprecated in AWS provider 6.x) 
+     as batch compute environments must be created and destroyed, never edited. This way when we go to make a 
+     "modification" we will stand up a new batch compute environment and once that succeeds, the old one will be 
+     torn down via the create_before_destroy lifecycle rule.
   */
-  compute_environment_name_prefix = local.compute_env_prefix_name
+  compute_environment_name = local.compute_env_prefix_name
 
   # Give permissions so the batch service can make API calls.
   service_role = aws_iam_role.batch_execution_role.arn
