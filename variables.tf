@@ -201,6 +201,12 @@ variable "extra_ui_static_env_vars" {
   description = "Additional environment variables for UI static app"
 }
 
+variable "extra_metadata_service_env_vars" {
+  type        = map(string)
+  default     = {}
+  description = "Additional environment variables for the metadata service container"
+}
+
 variable "with_public_ip" {
   type        = bool
   description = "Enable public IP assignment for the Metadata Service. If the subnets specified for subnet1_id and subnet2_id are public subnets, you will NEED to set this to true to allow pulling container images from public registries. Otherwise this should be set to false."
