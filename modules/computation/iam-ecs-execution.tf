@@ -37,7 +37,10 @@ data "aws_iam_policy_document" "ecs_task_execution_policy" {
       "ecr:GetDownloadUrlForLayer",
       "ecr:BatchGetImage",
       "logs:CreateLogStream",
-      "logs:PutLogEvents"
+      "logs:PutLogEvents",
+      # Permissions to pull images in ECR PTC (if images missing from Repo)
+      "ecr:CreateRepository",
+      "ecr:BatchImportUpstreamImage",
     ]
 
     # The `"Resource": "*"` is not a concern and the policy that Amazon suggests using
