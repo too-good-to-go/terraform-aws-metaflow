@@ -247,14 +247,11 @@ variable "step_functions_dynamodb_point_in_time_recovery_enabled" {
   default     = false
 }
 
-variable "job_state_time_limit_timeout" {
-  type        = number
-  description = "The timeout for job state in seconds"
-  default     = null
-}
-
-variable "job_state_time_limit_reason" {
-  type        = string
-  description = "The reason for job state timeout"
-  default     = null
+variable "job_state_time_limit_actions" {
+  type = list(object({
+    max_time_seconds = number
+    reason           = string
+  }))
+  description = "One or more Batch job queue job state time limit rules. Each entry cancels (action CANCEL) jobs stuck in RUNNABLE after max_time_seconds for the given AWS Batch reason code. See https://docs.aws.amazon.com/batch/latest/userguide/job_stuck_in_runnable.html"
+  default     = []
 }
