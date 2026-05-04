@@ -107,7 +107,7 @@ module "metaflow-computation" {
   launch_template_http_put_response_hop_limit = var.launch_template_http_put_response_hop_limit
   job_state_time_limit_timeout                = var.job_state_time_limit_timeout
   job_state_time_limit_reason                 = var.job_state_time_limit_reason
-  standard_tags = var.tags
+  standard_tags                               = var.tags
 }
 
 module "metaflow-step-functions" {
@@ -116,11 +116,11 @@ module "metaflow-step-functions" {
   resource_prefix = local.resource_prefix
   resource_suffix = local.resource_suffix
 
-  active              = var.enable_step_functions
-  batch_job_queue_arn = module.metaflow-computation.METAFLOW_BATCH_JOB_QUEUE
-  iam_partition       = var.iam_partition
-  s3_bucket_arn       = module.metaflow-datastore.s3_bucket_arn
-  s3_bucket_kms_arn   = module.metaflow-datastore.datastore_s3_bucket_kms_key_arn
+  active                                  = var.enable_step_functions
+  batch_job_queue_arn                     = module.metaflow-computation.METAFLOW_BATCH_JOB_QUEUE
+  iam_partition                           = var.iam_partition
+  s3_bucket_arn                           = module.metaflow-datastore.s3_bucket_arn
+  s3_bucket_kms_arn                       = module.metaflow-datastore.datastore_s3_bucket_kms_key_arn
   dynamodb_point_in_time_recovery_enabled = var.step_functions_dynamodb_point_in_time_recovery_enabled
 
   standard_tags = var.tags

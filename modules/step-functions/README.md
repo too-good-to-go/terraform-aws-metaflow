@@ -13,6 +13,7 @@ To read more, see [the Metaflow docs](https://docs.metaflow.org/going-to-product
 |------|-------------|------|---------|:--------:|
 | <a name="input_active"></a> [active](#input\_active) | When true step function infrastructure is provisioned. | `bool` | `false` | no |
 | <a name="input_batch_job_queue_arn"></a> [batch\_job\_queue\_arn](#input\_batch\_job\_queue\_arn) | Batch job queue arn | `string` | n/a | yes |
+| <a name="input_dynamodb_point_in_time_recovery_enabled"></a> [dynamodb\_point\_in\_time\_recovery\_enabled](#input\_dynamodb\_point\_in\_time\_recovery\_enabled) | Enable Point-in-Time Recovery for the Step Functions state DynamoDB table | `bool` | `false` | no |
 | <a name="input_iam_partition"></a> [iam\_partition](#input\_iam\_partition) | IAM Partition (Select aws-us-gov for AWS GovCloud, otherwise leave as is) | `string` | `"aws"` | no |
 | <a name="input_resource_prefix"></a> [resource\_prefix](#input\_resource\_prefix) | Prefix given to all AWS resources to differentiate between applications | `string` | n/a | yes |
 | <a name="input_resource_suffix"></a> [resource\_suffix](#input\_resource\_suffix) | Suffix given to all AWS resources to differentiate between environment and workspace | `string` | n/a | yes |
