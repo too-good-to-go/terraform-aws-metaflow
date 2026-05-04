@@ -246,3 +246,15 @@ variable "step_functions_dynamodb_point_in_time_recovery_enabled" {
   description = "Enable Point-in-Time Recovery for the Step Functions state DynamoDB table"
   default     = false
 }
+
+variable "job_state_time_limit_timeout" {
+  type        = number
+  description = "The timeout for job state in seconds"
+  default     = null
+}
+
+variable "job_state_time_limit_reason" {
+  type        = string
+  description = "The reason for job state timeout"
+  default     = null
+}
