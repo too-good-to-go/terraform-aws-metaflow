@@ -84,6 +84,17 @@ resource "aws_batch_job_queue" "this" {
     order               = 1
     compute_environment = aws_batch_compute_environment.this.arn
   }
+  dynamic "job_state_time_limit_action" {
+    for_each = local.job_state_valid ? [1] : []
+  
+  content {
+      action= "CANCEL"
+      max_time_seconds = var.job_state_time_limit_timeout 
+      /* For valid reasons go to docs --> https://docs.aws.amazon.com/batch/latest/userguide/job_stuck_in_runnable.html */
+      reason=var.job_state_time_limit_reason
+      state="RUNNABLE"
+    }
+  }
 
   tags = var.standard_tags
 }
