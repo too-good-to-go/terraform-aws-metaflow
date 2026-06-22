@@ -90,6 +90,12 @@ variable "metadata_service_memory" {
   description = "ECS task memory in MiB for metadata service"
 }
 
+variable "metadata_service_desired_count" {
+  type        = number
+  default     = 1
+  description = "Desired number of ECS tasks for metadata service"
+}
+
 variable "metaflow_vpc_id" {
   type        = string
   description = "ID of the Metaflow VPC this SageMaker notebook instance is to be deployed in"

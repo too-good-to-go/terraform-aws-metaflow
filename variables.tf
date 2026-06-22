@@ -108,6 +108,18 @@ variable "metadata_service_container_image" {
   description = "Container image for metadata service"
 }
 
+variable "metadata_service_cpu" {
+  type        = number
+  default     = 512
+  description = "ECS task CPU units for metadata service"
+}
+
+variable "metadata_service_desired_count" {
+  type        = number
+  default     = 1
+  description = "Desired number of ECS tasks for metadata service"
+}
+
 variable "metadata_service_enable_api_basic_auth" {
   type        = bool
   default     = true
