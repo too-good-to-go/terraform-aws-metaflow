@@ -114,6 +114,12 @@ variable "metadata_service_cpu" {
   description = "ECS task CPU units for metadata service"
 }
 
+variable "metadata_service_memory" {
+  type        = number
+  default     = 1024
+  description = "ECS task memory in MiB for metadata service"
+}
+
 variable "metadata_service_desired_count" {
   type        = number
   default     = 1
